@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="1323.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.View.Controllers.Controller">
+   <children>
+      <TableView fx:id="tableHuman" layoutX="74.0" layoutY="15.0" prefHeight="735.0" prefWidth="765.0">
+        <columns>
+          <TableColumn fx:id="nameHuman" prefWidth="252.0" text="Họ và tên" />
+          <TableColumn fx:id="dobHuman" prefWidth="170.0" text="Ngày sinh" />
+            <TableColumn fx:id="genderHuman" prefWidth="67.0" text="Giới tính" />
+            <TableColumn fx:id="addressHuman" prefWidth="275.0" text="Địa chỉ" />
+        </columns>
+      </TableView>
+      <Button fx:id="createHumanBtn" layoutX="967.0" layoutY="39.0" mnemonicParsing="false" onAction="#openCreateWd" prefHeight="50.0" prefWidth="219.0" text="Thêm mới Human">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
