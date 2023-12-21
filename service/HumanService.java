@@ -6,6 +6,7 @@ import com.example.demo.entities.Human;
 import com.example.demo.repository.HumanRepository;
 import com.example.demo.service.ServiceResult.Status;
 
+// Đây là lớp tạo ra để việc giao tiếp giữa HumanView với HumanRepository dễ dàng hơn, kết quả sẽ mang theo cả data, Status, Message để trình điều khiển debug
 @Service
 public class HumanService {
 	@Autowired
