@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+// Đây là lớp Model trong kiến trúc MVVM
 @Entity
 @Table(name = "human")
 public class Human {
