@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.entities.Human;
 @Repository
+// Tự tìm hiểu về Repository đê
 public interface HumanRepository extends JpaRepository<Human, Integer>{
 	@Query(value = "select * from human", nativeQuery = true)
 	List<Human> findAll();
