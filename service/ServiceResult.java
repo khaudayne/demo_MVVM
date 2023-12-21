@@ -1,4 +1,5 @@
 package com.example.demo.service;
+// Class gồm những đối tượng là kết quả trả về của những hàm trong HumanService, mang thông điệp và data rõ ràng
 public class ServiceResult {
 	private Status status = Status.SUCCESS;
 	private String message;
