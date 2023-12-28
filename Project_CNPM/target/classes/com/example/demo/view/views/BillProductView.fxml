@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="parentRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.view.controllers.BillProductCalViewController">
+   <children>
+      <Label layoutX="148.0" layoutY="19.0" text="Chọn ngày bắt đầu">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="702.0" layoutY="19.0" text="Chọn ngày kết thúc">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datePickStart" layoutX="148.0" layoutY="63.0" prefHeight="64.0" prefWidth="353.0" />
+      <DatePicker fx:id="datePickEnd" layoutX="702.0" layoutY="63.0" prefHeight="64.0" prefWidth="353.0" />
+      <Button fx:id="billProductCalBtn" layoutX="1286.0" layoutY="63.0" mnemonicParsing="false" onAction="#billProductCal" prefHeight="64.0" prefWidth="143.0" text="Tính">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <BarChart fx:id="billProductBarChart" layoutX="110.0" layoutY="209.0" prefHeight="764.0" prefWidth="1557.0" visible="false">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="xAxistBillProduct">
+               <tickLabelFont>
+                  <Font size="12.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxistBillProduct" label="Số lượng" side="LEFT">
+               <tickLabelFont>
+                  <Font size="12.0" />
+               </tickLabelFont>
+            </NumberAxis>
+        </yAxis>
+      </BarChart>
+      <Button fx:id="returnMainWdBtn" layoutX="1778.0" layoutY="20.0" mnemonicParsing="false" onAction="#returnMainWd" prefHeight="53.0" prefWidth="54.0" text="x">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <LineChart fx:id="billProductLineChart" layoutX="110.0" layoutY="209.0" prefHeight="764.0" prefWidth="1557.0" visible="false">
+        <xAxis>
+          <CategoryAxis label="Ngày" side="BOTTOM" fx:id="xAxistBillProductLine" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxistBillProductLine" label="Doanh thu" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Button fx:id="swapChartBtn" layoutX="1727.0" layoutY="267.0" mnemonicParsing="false" onAction="#swapChart" prefHeight="45.0" prefWidth="136.0" text="Xem thống kê" visible="false">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label fx:id="totalProfitLabel" layoutX="148.0" layoutY="144.0" text="Chọn ngày bắt đầu" visible="false">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <VBox fx:id="inforVbox" layoutX="283.0" layoutY="645.0" prefHeight="45.0" prefWidth="169.0" style="-fx-border-color: black; -fx-padding: 6; -fx-background-color: white;" visible="false">
+         <children>
+            <Label fx:id="dateInforLabel" prefHeight="27.0" prefWidth="221.0" text="Date: 20-12-2023">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="profitInforLabel" prefHeight="27.0" prefWidth="252.0" text="Profit: 20000000">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

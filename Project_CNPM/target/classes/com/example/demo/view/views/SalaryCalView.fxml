@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="parentRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.view.controllers.SalaryCalViewController">
+   <children>
+      <TextField fx:id="idStaffTf" focusTraversable="false" layoutX="111.0" layoutY="95.0" prefHeight="64.0" prefWidth="353.0" promptText="Toàn bộ nhân viên">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </TextField>
+      <Label layoutX="111.0" layoutY="28.0" prefHeight="64.0" prefWidth="224.0" text="Tìm kiếm nhân viên">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datePickStart" focusTraversable="false" layoutX="571.0" layoutY="95.0" prefHeight="64.0" prefWidth="353.0" />
+      <DatePicker fx:id="datePickEnd" focusTraversable="false" layoutX="1047.0" layoutY="95.0" prefHeight="64.0" prefWidth="353.0" />
+      <Label layoutX="1047.0" layoutY="28.0" prefHeight="64.0" prefWidth="224.0" text="Ngày kết thúc">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="571.0" layoutY="28.0" prefHeight="64.0" prefWidth="224.0" text="Ngày bắt đầu">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableSalary" layoutX="106.0" layoutY="292.0" prefHeight="682.0" prefWidth="1711.0" visible="false">
+        <columns>
+          <TableColumn fx:id="idStaffColumn" prefWidth="343.0" text="Mã nhân viên" />
+          <TableColumn fx:id="nameStaffColumn" prefWidth="816.0" text="Tên nhân viên" />
+            <TableColumn fx:id="salaryStaffColumn" prefWidth="551.0" text="Tiền lương" />
+        </columns>
+      </TableView>
+      <Button fx:id="salaryCalBtn" focusTraversable="false" layoutX="1493.0" layoutY="95.0" mnemonicParsing="false" onAction="#salaryCal" prefHeight="64.0" prefWidth="183.0" text="Tính">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Label fx:id="totalSalaryLabel" layoutX="111.0" layoutY="189.0" prefHeight="64.0" prefWidth="696.0" visible="false">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
