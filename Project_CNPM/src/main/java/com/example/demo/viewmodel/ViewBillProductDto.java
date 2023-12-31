@@ -19,7 +19,7 @@ public class ViewBillProductDto {
 		this.billProductService = ProjectCnpmApplication.getContext().getBean(BillProductService.class);
 	}
 	
-	public static ViewBillProductDto getViewSalaryCalDto() {
+	public static ViewBillProductDto getViewBillProductDto() {
 		if(viewBillProductDto == null) {
 			viewBillProductDto = new ViewBillProductDto();
 		}
@@ -42,16 +42,40 @@ public class ViewBillProductDto {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public ServiceResult getProfit(LocalDateTime dateStart, LocalDateTime dateEnd) {
-		ServiceResult result = billProductService.getProfit(dateStart, dateEnd);
+	public ServiceResult getProfitPerDay(LocalDateTime dateStart, LocalDateTime dateEnd) {
+		ServiceResult result = billProductService.getProfitPerDay(dateStart, dateEnd);
 		if(result.getStatus() == Status.SUCCESS) {
 			List<IBillProduct> iBillProducts = (List<IBillProduct>) result.getData();
 			List<BillProductDto> billProductDtos = new ArrayList<BillProductDto>();
 			for(int i = 0; i < iBillProducts.size(); i++) {
-				billProductDtos.add(new BillProductDto(iBillProducts.get(i).getName(), iBillProducts.get(i).getCount()));
+				billProductDtos.add(new BillProductDto(convertDate(iBillProducts.get(i).getName()), iBillProducts.get(i).getCount()));
 			}
 			result.setData(billProductDtos);
 			return result;
+		}
+		return result;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public ServiceResult getProfitPerMonth(LocalDateTime dateStart, LocalDateTime dateEnd) {
+		ServiceResult result = billProductService.getProfitPerMonth(dateStart, dateEnd);
+		if(result.getStatus() == Status.SUCCESS) {
+			List<IBillProduct> iBillProducts = (List<IBillProduct>) result.getData();
+			List<BillProductDto> billProductDtos = new ArrayList<BillProductDto>();
+			for(int i = 0; i < iBillProducts.size(); i++) {
+				billProductDtos.add(new BillProductDto(convertDate(iBillProducts.get(i).getName()), iBillProducts.get(i).getCount()));
+			}
+			result.setData(billProductDtos);
+			return result;
+		}
+		return result;
+	}
+	
+	public String convertDate(String date) {
+		String[] v = date.split("-");
+		String result = v[v.length - 1];
+		for(int i = v.length - 2; i >= 0; i--) {
+			result += "-" + v[i];
 		}
 		return result;
 	}

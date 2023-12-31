@@ -46,5 +46,10 @@
             <Font size="22.0" />
          </font>
       </Label>
+      <Button layoutX="1832.0" layoutY="36.0" mnemonicParsing="false" onAction="#returnMainView" prefHeight="48.0" prefWidth="47.0" text="x">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

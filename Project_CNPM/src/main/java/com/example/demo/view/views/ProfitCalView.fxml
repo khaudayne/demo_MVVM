@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.view.controllers.ProfitCalViewController">
+   <children>
+      <Button fx:id="returnMainViewBtn" focusTraversable="false" layoutX="1825.0" layoutY="20.0" mnemonicParsing="false" onAction="#returnMainView" text="x">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Label focusTraversable="false" layoutX="280.0" layoutY="22.0" prefHeight="32.0" prefWidth="205.0" text="Chọn ngày bắt đầu">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datePickStart" focusTraversable="false" layoutX="280.0" layoutY="54.0" prefHeight="61.0" prefWidth="308.0" />
+      <DatePicker fx:id="datePickEnd" focusTraversable="false" layoutX="693.0" layoutY="54.0" prefHeight="61.0" prefWidth="308.0" />
+      <Label focusTraversable="false" layoutX="693.0" layoutY="22.0" prefHeight="32.0" prefWidth="205.0" text="Chọn ngày kết thúc">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="profitCalBtn" focusTraversable="false" layoutX="1577.0" layoutY="38.0" mnemonicParsing="false" onAction="#profitCal" prefHeight="61.0" prefWidth="80.0" text="Tính">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <LineChart fx:id="profitLinechart" layoutX="132.0" layoutY="172.0" prefHeight="774.0" prefWidth="1657.0" visible="false">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="xAxisProfitLine" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxisProfitLine" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <ComboBox fx:id="typeCbb" layoutX="1090.0" layoutY="54.0" prefHeight="61.0" prefWidth="308.0" />
+      <Label focusTraversable="false" layoutX="1090.0" layoutY="22.0" prefHeight="32.0" prefWidth="205.0" text="Thống kê theo">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalProfitLabel" focusTraversable="false" layoutX="280.0" layoutY="125.0" prefHeight="32.0" prefWidth="1442.0" visible="false">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

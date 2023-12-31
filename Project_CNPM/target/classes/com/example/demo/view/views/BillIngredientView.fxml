@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.view.controllers.BillIngredientCalViewController">
+   <children>
+      <Label layoutX="239.0" layoutY="16.0" prefHeight="32.0" prefWidth="174.0" text="Ngày bắt đầu">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datePickStart" layoutX="239.0" layoutY="49.0" prefHeight="60.0" prefWidth="308.0" />
+      <DatePicker fx:id="datePickEnd" layoutX="702.0" layoutY="49.0" prefHeight="60.0" prefWidth="308.0" />
+      <Label layoutX="702.0" layoutY="16.0" prefHeight="32.0" prefWidth="174.0" text="Ngày kết thúc">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="billIngredientCalBtn" layoutX="1205.0" layoutY="49.0" mnemonicParsing="false" onAction="#billIngredientCal" prefHeight="60.0" prefWidth="128.0" text="Tính">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="returnMainViewBtn" layoutX="1745.0" layoutY="32.0" mnemonicParsing="false" onAction="#returnMainView" prefHeight="54.0" prefWidth="53.0" text="x">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Label fx:id="totalBillIngredientLabel" layoutX="200.0" layoutY="123.0" prefHeight="32.0" prefWidth="458.0" text="Ngày bắt đầu" visible="false">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableIngredient" layoutX="200.0" layoutY="163.0" prefHeight="772.0" prefWidth="1521.0" visible="false">
+        <columns>
+          <TableColumn fx:id="nameIngeredientColumn" prefWidth="599.0" text="Tên nguyên liệu" />
+          <TableColumn fx:id="countIngeredientColumn" prefWidth="223.0" text="Số lượng" />
+            <TableColumn fx:id="unitIngeredientColumn" prefWidth="296.0" text="Đơn vị" />
+            <TableColumn fx:id="totalIngeredientColumn" prefWidth="402.0" text="Tổng tiền" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

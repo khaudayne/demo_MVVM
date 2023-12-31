@@ -26,6 +26,10 @@ public class MainViewController implements Initializable{
 	@FXML
 	private Button openWdBillProductCalViewBtn;
 	@FXML
+	private Button openWdBillIngredientCalViewBtn;
+	@FXML
+	private Button openWdProfitCalViewBtn;
+	@FXML
 	private Scene scene;
 	@FXML
 	private Stage stage;
@@ -66,5 +70,37 @@ public class MainViewController implements Initializable{
 		}
 	}
 	
+	public void openWdBillIngredientCalView(ActionEvent event) {
+		try {
+			URL url = new File("src/main/java/com/example/demo/view/views/BillIngredientView.fxml").toURI().toURL();
+//			URL url1 = new File("src/main/java/com/example/demo/style/style.css").toURI().toURL();
+			parent = FXMLLoader.load(url);
+			Node btn = (Node) event.getSource();
+			stage = (Stage)(btn.getScene().getWindow());
+			scene = new Scene(parent);
+//			scene.getStylesheets().add(url1.toExternalForm());
+			stage.setScene(scene);
+			stage.setMaximized(true);
+			stage.show();
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+	}
 	
+	public void openWdProfitCalView(ActionEvent event) {
+		try {
+			URL url = new File("src/main/java/com/example/demo/view/views/ProfitCalView.fxml").toURI().toURL();
+//			URL url1 = new File("src/main/java/com/example/demo/style/style.css").toURI().toURL();
+			parent = FXMLLoader.load(url);
+			Node btn = (Node) event.getSource();
+			stage = (Stage)(btn.getScene().getWindow());
+			scene = new Scene(parent);
+//			scene.getStylesheets().add(url1.toExternalForm());
+			stage.setScene(scene);
+			stage.setMaximized(true);
+			stage.show();
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+	}
 }
