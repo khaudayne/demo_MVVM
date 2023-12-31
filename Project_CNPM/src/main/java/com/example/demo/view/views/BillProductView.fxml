@@ -13,14 +13,14 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="702.0" layoutY="19.0" text="Chọn ngày kết thúc">
+      <Label layoutX="646.0" layoutY="19.0" text="Chọn ngày kết thúc">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
       <DatePicker fx:id="datePickStart" layoutX="148.0" layoutY="63.0" prefHeight="64.0" prefWidth="353.0" />
-      <DatePicker fx:id="datePickEnd" layoutX="702.0" layoutY="63.0" prefHeight="64.0" prefWidth="353.0" />
-      <Button fx:id="billProductCalBtn" layoutX="1286.0" layoutY="63.0" mnemonicParsing="false" onAction="#billProductCal" prefHeight="64.0" prefWidth="143.0" text="Tính">
+      <DatePicker fx:id="datePickEnd" layoutX="646.0" layoutY="63.0" prefHeight="64.0" prefWidth="353.0" />
+      <Button fx:id="billProductCalBtn" layoutX="1487.0" layoutY="63.0" mnemonicParsing="false" onAction="#billProductCal" prefHeight="64.0" prefWidth="143.0" text="Tính">
          <font>
             <Font size="22.0" />
          </font>
@@ -41,7 +41,7 @@
             </NumberAxis>
         </yAxis>
       </BarChart>
-      <Button fx:id="returnMainWdBtn" layoutX="1778.0" layoutY="20.0" mnemonicParsing="false" onAction="#returnMainWd" prefHeight="53.0" prefWidth="54.0" text="x">
+      <Button fx:id="returnMainWdBtn" layoutX="1827.0" layoutY="25.0" mnemonicParsing="false" onAction="#returnMainWd" prefHeight="53.0" prefWidth="54.0" text="x">
          <font>
             <Font size="23.0" />
          </font>
@@ -78,5 +78,16 @@
             </Label>
          </children>
       </VBox>
+      <Label layoutX="1135.0" layoutY="19.0" text="Chọn ngày kết thúc">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="typeCbb" layoutX="1135.0" layoutY="63.0" prefHeight="64.0" prefWidth="237.0" />
+      <Label fx:id="totalProfitLabel1" layoutX="158.0" layoutY="154.0" text="Chọn ngày bắt đầu" visible="false">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

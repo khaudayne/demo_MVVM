@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -19,7 +18,7 @@ class ProjectCnpmApplicationTests {
 	@Test
 	void contextLoads() {
 		try {
-			ServiceResult result = salaryCalService.getAllSalaryCal(Date.valueOf(LocalDate.of(2023, 12, 20)), Date.valueOf(LocalDate.of(2023, 12, 20)));
+			ServiceResult result = salaryCalService.getAllSalaryCal(LocalDate.of(2023, 12, 20), LocalDate.of(2023, 12, 20));
 			@SuppressWarnings("unchecked")
 			List<ISalaryCal> iSalaryCals = (List<ISalaryCal>) result.getData();
 			for(int i = 0; i < iSalaryCals.size(); i++) {

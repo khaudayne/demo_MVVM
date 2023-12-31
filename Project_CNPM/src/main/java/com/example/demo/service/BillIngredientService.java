@@ -1,48 +1,49 @@
 package com.example.demo.service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.repository.BillProductRepository;
+import com.example.demo.repository.BillIngredientRepository;
 import com.example.demo.service.ServiceResult.Status;
+
 @Service
-public class BillProductService {
+public class BillIngredientService {
 	@Autowired
-	BillProductRepository billProductRepo;
+	BillIngredientRepository  billIngredientRepo;
 	
-	public ServiceResult getProductCount(LocalDateTime dateStart, LocalDateTime dateEnd) {
+	public ServiceResult getIngredientCount(LocalDate dateStart, LocalDate dateEnd) {
 		ServiceResult result = new ServiceResult();
 		try {
-			result.setData(billProductRepo.getProductCount(dateStart, dateEnd));
+			result.setData(billIngredientRepo.getIngredientCount(dateStart, dateEnd));
 			result.setMessage("Lay du lieu thanh cong");
 		} catch (Exception e) {
-			result.setMessage("Lay du lieu that bai");
 			result.setStatus(Status.FAILED);
+			result.setMessage("Lay du lieu that bai");
 		}
 		return result;
 	}
 	
-	public ServiceResult getProfitPerDay(LocalDateTime dateStart, LocalDateTime dateEnd) {
+	public ServiceResult getBIPerDay(LocalDate dateStart, LocalDate dateEnd) {
 		ServiceResult result = new ServiceResult();
 		try {
-			result.setData(billProductRepo.getProfitPerDay(dateStart, dateEnd));
+			result.setData(billIngredientRepo.getBIPerDay(dateStart, dateEnd));
 			result.setMessage("Lay du lieu thanh cong");
 		} catch (Exception e) {
-			result.setMessage("Lay du lieu that bai");
 			result.setStatus(Status.FAILED);
+			result.setMessage("Lay du lieu that bai");
 		}
 		return result;
 	}
-	
-	public ServiceResult getProfitPerMonth(LocalDateTime dateStart, LocalDateTime dateEnd) {
+	public ServiceResult getBIPerMonth(LocalDate dateStart, LocalDate dateEnd) {
 		ServiceResult result = new ServiceResult();
 		try {
-			result.setData(billProductRepo.getProfitPerMonth(dateStart, dateEnd));
+			result.setData(billIngredientRepo.getBIPerMonth(dateStart, dateEnd));
 			result.setMessage("Lay du lieu thanh cong");
 		} catch (Exception e) {
-			result.setMessage("Lay du lieu that bai");
 			result.setStatus(Status.FAILED);
+			result.setMessage("Lay du lieu that bai");
 		}
 		return result;
 	}
